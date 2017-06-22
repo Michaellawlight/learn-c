@@ -9,9 +9,9 @@ int main() {
 
   /* float lower_celcius, upper_celcius, step_celcius; */
 
-  lower_fahr = 0; /* lower limit of temperature scale */
+  lower_fahr = 0;   /* lower limit of temperature scale */
   upper_fahr = 300; // upper limit
-  step_fahr = 20; // step size
+  step_fahr = 20;   // step size
 
   fahr = lower_fahr;
   /* lower_celcius = (5.0 /9) * (lower_fahr - 32); */
@@ -22,9 +22,10 @@ int main() {
   /* if (step_celcius < 0) */
     /* step_celcius = step_celcius * -1; */
 
-  printf("Celcius / Fahrenheit Table: %.0fF to %.0fF\n", lower_fahr, upper_fahr);
 
-  // Fahrenheit to celcius
+  printf("celcius / fahrenheit table: %.0ff to %.0ff\n", lower_fahr, upper_fahr);
+
+  // fahrenheit to celcius
   for(float fahr = 300; fahr >= 0; fahr -= 20) {
     printf("%3.0f\t%6.1f\n", fahr, (5.0/9.0) * (fahr - 32.0));
   }
