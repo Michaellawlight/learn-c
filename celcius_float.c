@@ -44,12 +44,11 @@ int main()
 
   printf("\n");
 
-  printf("Celcius to Fahr: %.0fF to %.0fF\n", lower, upper);
+  printf("Celcius to Fahr: %.0fC to %.0fC\n", lower_celcius, upper_celcius);
   printf("---------------------------------------\n");
 
   for (;lower_celcius <= upper_celcius; lower_celcius += step_celcius) {
     printf("%6.1f\t%3.0f\n", lower_celcius, lower_celcius * (9.0 / 5.0) + 32);
-    lower_celcius += step_celcius;
   }
 
 
