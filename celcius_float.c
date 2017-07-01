@@ -10,6 +10,8 @@ int main()
   float upper = 300;
   float step = 20;
 
+  printf("Fahr to Celcius: %.0fF to %.0fF\n", lower, upper);
+  printf("----------------------------------\n");
 
   while (lower <= upper) {
     float celcius = (5.0 / 9.0) * (lower - 32.0);
