@@ -1,0 +1,4 @@
+```sh
+mkdir bin
+make
+```
