@@ -1,0 +1,165 @@
+% Created 2017-07-13 Thu 15:12
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{minted}
+\author{Rafi Khan}
+\date{\today}
+\title{Notes for learning C}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 25.2.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{K \& R}
+\label{sec-1}
+\subsection{Chapter 1 - A tutorial introduction}
+\label{sec-1-1}
+\begin{itemize}
+\item Overview of many language feautures
+\end{itemize}
+
+\subsubsection{Hello world}
+\label{sec-1-1-1}
+\begin{minted}[]{c}
+#include <stdio.h> // Includes io functions from the standard library
+
+int main () {
+  // Prints to standard output
+  // '\n' is an escape sequence that prints a new line
+  printf("hello, world\n");  // the string to be printed out is given as an argument
+}
+\end{minted}
+
+An identical program can be created using \texttt{puts}
+\begin{minted}[]{c}
+#include <stdio.h>
+
+int main() {
+
+  puts("hello, world");
+
+  return 0;
+}
+\end{minted}
+
+The \texttt{printf} functions is needed for \emph{formatted} output.
+
+\begin{enumerate}
+\item Exercise 1-1
+\label{sec-1-1-1-1}
+Run the hello world program. Already done above
+
+\item Exercise 1-2
+\label{sec-1-1-1-2}
+Use \texttt{\textbackslash{}c} where c is a non existing escape sequence
+
+\begin{minted}[]{c}
+#include <stdio.h> // Includes io functions from the standard library
+
+int main () {
+  // Prints to standard output
+  // '\n' is an escape sequence that prints a new line
+  printf("hello, world\y");  // the string to be printed out is given as an argument
+}
+\end{minted}
+
+\begin{itemize}
+\item The escape character \texttt{\textbackslash{}} is ignored and instead \texttt{y} is printed
+\end{itemize}
+
+\item {\bfseries\sffamily TODO} Research printf
+\label{sec-1-1-1-3}
+\end{enumerate}
+
+
+\subsubsection{Fahrenheit and Celcius}
+\label{sec-1-1-2}
+\begin{itemize}
+\item Variables
+\item Arithmetic
+\end{itemize}
+
+\begin{minted}[]{c}
+#include <stdio.h>
+
+int main() {
+
+  int lower = 0;
+  int upper = 300;
+  int step = 20;
+
+  int fahr = lower;
+
+  while(fahr <= upper) {
+    int celcius = (5.0 / 9.0) * (fahr - 32);
+    printf("%d\t%d\n", fahr, celcius);
+
+    fahr += step;
+  }
+
+  return 0;
+}
+\end{minted}
+
+\begin{itemize}
+\item \texttt{5.0} and \texttt{9.0} are floats which evaluate to a float instead of 0 if \texttt{5} and \texttt{9} were used instead
+\item All statements in C end with a semicolon
+\item A while loop evaluates its condition every time and executes its instructions if true, other wise it exits
+\item \texttt{5/9} in C truncates to 0
+\begin{minted}[]{c}
+#include <stdio.h>
+
+int main() {
+
+  printf("%d", 5/9); // Truncated to 0 as an integer
+
+  return 0;
+}
+\end{minted}
+\end{itemize}
+
+\begin{enumerate}
+\item Data types
+\label{sec-1-1-2-1}
+C has many data types
+
+\begin{enumerate}
+\item Research
+\label{sec-1-1-2-1-1}
+\begin{enumerate}
+\item {\bfseries\sffamily TODO} char
+\label{sec-1-1-2-1-1-1}
+\item {\bfseries\sffamily TODO} short
+\label{sec-1-1-2-1-1-2}
+\item {\bfseries\sffamily TODO} long
+\label{sec-1-1-2-1-1-3}
+\item {\bfseries\sffamily TODO} double
+\label{sec-1-1-2-1-1-4}
+\end{enumerate}
+
+\item Other data types
+\label{sec-1-1-2-1-2}
+There are also other more complex data types such as arrays, structures and unions.
+\end{enumerate}
+\end{enumerate}
+% Emacs 25.2.1 (Org mode 8.2.10)
+\end{document}
